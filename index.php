@@ -1,7 +1,7 @@
 <?php
 session_start();
 require 'koneksi.php';
-
+/*
 // Ambil data menu dari database
 $menu = [];
 $result = $conn->query("SELECT * FROM menu");
@@ -13,8 +13,32 @@ if ($result) {
 } else {
   die("Gagal mengambil data menu: " . $conn->error);
 }
-
+*/
 // Inisialisasi cart di session
+
+$menu = [
+    [
+        "nama_menu" => "Paket Nasi",
+        "harga" => 10000,
+        "img" => "https://images.unsplash.com/photo-1628521061262-19b5cdb7eee5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cmljZSUyMGJvd2x8ZW58MHx8MHx8fDA%3D"
+    ],
+    [
+        "nama_menu" => "Ayam Goreng",
+        "harga" => 7500,
+        "img" => "https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZnJpZWQlMjBjaGlja2VufGVufDB8fDB8fHww"
+    ],
+    [
+        "nama_menu" => "Sayur Kangkung",
+        "harga" => 3000,
+        "img" => "https://images.unsplash.com/photo-1680676066605-08566beed799?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8a2FuZ2t1bmd8ZW58MHx8MHx8fDA%3D"
+    ],
+    [
+        "nama_menu" => "Kopi Hitam",
+        "harga" => 5000,
+        "img" => "https://images.unsplash.com/photo-1610632380989-680fe40816c6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjh8fGNvZmZlZXxlbnwwfHwwfHx8MA%3D%3D"
+    ],
+];
+
 if (!isset($_SESSION['cart'])) {
   $_SESSION['cart'] = [];
 }
